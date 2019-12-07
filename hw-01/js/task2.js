@@ -13,5 +13,5 @@ let report = total >= ordered && Number(ordered) ? 'Заказ оформлен,
 //   report = 'На складе недостаточно товаров или введено не корректное значение';
 // }
 
-console.log(report);
+console.log("Task 2 -", report);
 alert(report);
