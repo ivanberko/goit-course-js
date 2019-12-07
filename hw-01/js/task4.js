@@ -12,7 +12,7 @@ if (сountDroid === null) {
 
 totalPrice = Number(сountDroid) * pricePerDroid;
 
-if (Number(сountDroid)) {
+if (Number(сountDroid) >= 1) {
   messageInfo = alert(`Общая сумма заказа на ${totalPrice} кредитов!`);
   console.log('Task 4 -', totalPrice);
 } else {
