@@ -6,30 +6,26 @@ let сountDroid = prompt('Какое количество дроидов вы х
 let totalPrice;
 let messageInfo;
 
-if (сountDroid === null) {
-  messageInfo = alert('Отменено пользовательм!');
+while (true) {
+  if (сountDroid === null || сountDroid === "") {
+    messageInfo = 'Отменено пользовательм!';
+    break;
+  }
+
+  totalPrice = Number(сountDroid) * pricePerDroid;
+
+  if (credits <= totalPrice) {
+    messageInfo = 'Недостаточно средств на счету!';
+    break;
+  } else if (credits >= totalPrice) {
+    messageInfo = `Вы купили ${сountDroid} дроидов, на счету осталось ${credits -
+      totalPrice} кредитов.`;
+    break;
+  } else if (Number.isNaN(Number(totalPrice))) {
+    messageInfo = 'Введено не корректное значение';
+    break;
+  }
 }
 
-totalPrice = Number(сountDroid) * pricePerDroid;
-
-if (Number(сountDroid) >= 1) {
-  messageInfo = alert(`Общая сумма заказа на ${totalPrice} кредитов!`);
-  console.log('Task 4 -', totalPrice);
-} else {
-  messageInfo = alert('Введено не корректное значение');
-}
-
-if (сountDroid === null) {
-  сountDroid = 0;
-  messageInfo = alert(
-    `Вы купили ${сountDroid} дроидов, на счету осталось ${credits -
-      totalPrice} кредитов.`,
-  );
-} else if (credits >= totalPrice) {
-  alert(
-    `Вы купили ${сountDroid} дроидов, на счету осталось ${credits -
-      totalPrice} кредитов.`,
-  );
-} else if (credits <= totalPrice) {
-  alert('Недостаточно средств на счету!');
-}
+console.log(`Task 4 ${messageInfo}`);
+alert(messageInfo);

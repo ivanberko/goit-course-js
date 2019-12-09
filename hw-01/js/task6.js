@@ -20,5 +20,5 @@ while (true) {
   total += userInput;
 }
 
-console.log(total);
+console.log(`Task 6 ${total}`);
 alert(`Введенная вами сумма чисел = ${total}`);

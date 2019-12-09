@@ -51,7 +51,7 @@ switch (deliverProduct.toLowerCase()) {
     break;
 
   default:
-    message5 = alert(`В вашей стране доставка не доступнв`);
+    message5 = alert(`В вашей стране доставка не доступна`);
 }
 
-console.log(message5);
+console.log(`Task 4 ${message5}`);

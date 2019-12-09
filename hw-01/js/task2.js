@@ -1,10 +1,10 @@
 'use strict';
 
-const total = 100;
+const totalGoods = 100;
 const ordered = prompt('Пожалуйста введите необходимое количество товара:');
 
 let report =
-  total >= ordered && Number(ordered)
+  totalGoods >= ordered && Number(ordered)
     ? 'Заказ оформлен, с вами свяжется менеджер'
     : 'На складе недостаточно товаров или введено не корректное значение!';
 
