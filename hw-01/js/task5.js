@@ -4,54 +4,44 @@ let cost;
 let deliverProduct = prompt(
   'Укажите страну в которую хотите заказать доставку!',
 );
-let message5;
+let message;
 
-if (deliverProduct === null) {
-  message5 = alert(`Доставка не выбрана`);
+if (deliverProduct === null || deliverProduct === '') {
+  message = alert(`Доставка не выбрана`);
 }
 
 switch (deliverProduct.toLowerCase()) {
   case 'китай':
     cost = 100;
-    message5 = alert(
+    message = alert(
       `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
     );
     break;
-
   case 'чили':
     cost = 250;
-    message5 = alert(
+    message = alert(
       `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
     );
-
     break;
-
   case 'австралия':
     cost = 170;
-    message5 = alert(
+    message = alert(
       `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
     );
-
     break;
-
   case 'индия':
     cost = 80;
-    message5 = alert(
+    message = alert(
       `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
     );
-
     break;
-
   case 'ямайка':
     cost = 120;
-    message5 = alert(
+    message = alert(
       `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
     );
-
     break;
-
   default:
-    message5 = alert(`В вашей стране доставка не доступна`);
+    message = alert(`В вашей стране доставка не доступна`);
 }
-
-console.log(`Task 4 ${message5}`);
+console.log(`Task 4 ${message}`);

@@ -2,12 +2,16 @@
 
 const credits = 23580;
 const pricePerDroid = 3000;
-let сountDroid = prompt('Какое количество дроидов вы хотите купить?');
+let сountDroid = true;
 let totalPrice;
 let messageInfo;
 
-while (true) {
-  if (сountDroid === null || сountDroid === "") {
+while (сountDroid) {
+  сountDroid = prompt('Какое количество дроидов вы хотите купить?');
+
+  if (Number.isNaN(Number(сountDroid))) {
+    messageInfo = confirm ('Введено не корректное значение');
+  } else if (сountDroid === null || сountDroid === '') {
     messageInfo = 'Отменено пользовательм!';
     break;
   }
@@ -20,9 +24,6 @@ while (true) {
   } else if (credits >= totalPrice) {
     messageInfo = `Вы купили ${сountDroid} дроидов, на счету осталось ${credits -
       totalPrice} кредитов.`;
-    break;
-  } else if (Number.isNaN(Number(totalPrice))) {
-    messageInfo = 'Введено не корректное значение';
     break;
   }
 }
