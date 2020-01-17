@@ -11,31 +11,34 @@ let deliverProduct = prompt(
 );
 
 if (deliverProduct === null) {
-  alert(`Доставка не выбрана`);
+  console.log(`Task-5 : Доставка не выбрана`);
+} else {
+  switch (deliverProduct.toLowerCase()) {
+    case 'китай':
+      console.log(
+        `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToChina} кредитов`,
+      );
+      break;
+    case 'чили':
+      console.log(
+        `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToChile} кредитов`,
+      );
+      break;
+    case 'австралия':
+      console.log(
+        `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToAustralia} кредитов`,
+      );
+      break;
+    case 'индия':
+      console.log(
+        `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToIndia} кредитов`,
+      );
+      break;
+    case 'ямайка':console.log(
+        `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToJamaica} кредитов`,
+      );
+      break;
+    default:
+      console.log(`Task-5 : В вашей стране доставка не доступна`);
+  }
 }
-// при null все равно заходит в switch и ругается на .toLowerCase() ?????
-switch (deliverProduct.toLowerCase()) {
-  case 'китай':
-    costToChina;
-    alert(`Доставка в ${deliverProduct} будет стоить ${costToChina} кредитов`);
-    break;
-  case 'чили':
-    costToChile;
-    alert(`Доставка в ${deliverProduct} будет стоить ${costToChile} кредитов`);
-    break;
-  case 'австралия':
-    costToAustralia;
-    alert(`Доставка в ${deliverProduct} будет стоить ${costToAustralia} кредитов`);
-    break;
-  case 'индия':
-    costToIndia;
-    alert(`Доставка в ${deliverProduct} будет стоить ${costToIndia} кредитов`);
-    break;
-  case 'ямайка':
-    costToJamaica;
-    alert(`Доставка в ${deliverProduct} будет стоить ${costToJamaica} кредитов`);
-    break;
-  default:
-    alert(`В вашей стране доставка не доступна`);
-}
-

@@ -3,13 +3,13 @@
 let userInput;
 let total = 0;
 
-while (userInput !== null) {
+do {
   userInput = prompt('Введите любое число');
 
   if (userInput === null) {
     alert('Вы закончили ввод');
     break;
-  } else if (Number.isNaN(Number(userInput))) {
+  } else if (Number.isNaN(Number(userInput)) || userInput === '') {
     alert('"ERROR" вы ввели некорректное число :( попробуйте еще раз!');
     continue;
   }
@@ -18,7 +18,7 @@ while (userInput !== null) {
   console.log(userInput);
 
   total += userInput;
-}
+} while (userInput !== null);
 
-console.log(`Task 6 ${total}`);
+console.log(`Task-6 : ${total}`);
 alert(`Введенная вами сумма чисел = ${total}`);

@@ -12,3 +12,4 @@ if (requestPas === null) {
   message = 'Доступ запрещен, неверный пароль!';
 }
 alert(message);
+console.log(`Task-3 : ${message}`)
