@@ -1,9 +1,9 @@
 'use strikt';
 
-let userInput = true;
+let userInput;
 let total = 0;
 
-while (userInput) {
+while (userInput !== null) {
   userInput = prompt('Введите любое число');
 
   if (userInput === null) {

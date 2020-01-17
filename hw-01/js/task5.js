@@ -1,47 +1,41 @@
 'use strict';
 
-let cost;
+const costToChina = 100;
+const costToChile = 250;
+const costToAustralia = 170;
+const costToIndia = 80;
+const costToJamaica = 120;
+
 let deliverProduct = prompt(
   'Укажите страну в которую хотите заказать доставку!',
 );
-let message;
 
-if (deliverProduct === null || deliverProduct === '') {
-  message = alert(`Доставка не выбрана`);
+if (deliverProduct === null) {
+  alert(`Доставка не выбрана`);
 }
-
+// при null все равно заходит в switch и ругается на .toLowerCase() ?????
 switch (deliverProduct.toLowerCase()) {
   case 'китай':
-    cost = 100;
-    message = alert(
-      `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
-    );
+    costToChina;
+    alert(`Доставка в ${deliverProduct} будет стоить ${costToChina} кредитов`);
     break;
   case 'чили':
-    cost = 250;
-    message = alert(
-      `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
-    );
+    costToChile;
+    alert(`Доставка в ${deliverProduct} будет стоить ${costToChile} кредитов`);
     break;
   case 'австралия':
-    cost = 170;
-    message = alert(
-      `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
-    );
+    costToAustralia;
+    alert(`Доставка в ${deliverProduct} будет стоить ${costToAustralia} кредитов`);
     break;
   case 'индия':
-    cost = 80;
-    message = alert(
-      `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
-    );
+    costToIndia;
+    alert(`Доставка в ${deliverProduct} будет стоить ${costToIndia} кредитов`);
     break;
   case 'ямайка':
-    cost = 120;
-    message = alert(
-      `Доставка в ${deliverProduct} будет стоить ${cost} кредитов`,
-    );
+    costToJamaica;
+    alert(`Доставка в ${deliverProduct} будет стоить ${costToJamaica} кредитов`);
     break;
   default:
-    message = alert(`В вашей стране доставка не доступна`);
+    alert(`В вашей стране доставка не доступна`);
 }
-console.log(`Task 4 ${message}`);
+

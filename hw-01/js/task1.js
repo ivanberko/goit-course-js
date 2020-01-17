@@ -3,9 +3,7 @@
 let price = 1000;
 const name = 'Генератор защитного поля';
 
-let sms = `Выбран "${name}", цена за штуту ${price} кредитов`;
-console.log("Task 1 -", sms);
+console.log (`Выбран "${name}", цена за штуту ${price} кредитов`);
 
 price = 2000;
-sms = `Выбран "${name}", цена за штуту ${price} кредитов`;
-console.log("Task 1 -", sms);
+console.log(`Выбран "${name}", цена за штуту ${price} кредитов`);
