@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('TASK5------------------------')
+
 const checkForSpam = function(messageStr) {
   let arrayMessage = messageStr.split(' ');
   for (let toFindSpam of arrayMessage) {

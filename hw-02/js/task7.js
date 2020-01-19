@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('TASK7------------------------')
+
 const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
 const isLoginValid = function(login) {
@@ -29,9 +31,9 @@ const addLogin = function(allLogins, login) {
   }
 };
 
-console.log(addLogin(logins, 'Ajax'));
-console.log(addLogin(logins, 'robotGoogles'));
-console.log(addLogin(logins, 'Zod'));
-console.log(addLogin(logins, 'jqueryisextremelyfast'));
+addLogin(logins, 'Ajax');
+addLogin(logins, 'robotGoogles')
+addLogin(logins, 'Zod');
+addLogin(logins, 'jqueryisextremelyfast');
 
 console.log(logins);

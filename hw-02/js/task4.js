@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('TASK4------------------------')
+
 const formatString = function(string) {
   if (string.length <= 40) {
     return string;

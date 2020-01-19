@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('TASK3------------------------')
+
 const findLongestWord = function(string) {
   const arrayWords = string.split(' ');
   let longestWord = arrayWords[0];
