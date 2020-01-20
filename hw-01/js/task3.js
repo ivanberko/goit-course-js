@@ -3,7 +3,7 @@
 const ADMIN_PASSWORD = 'jqueryismyjam';
 let message;
 
-let requestPas = prompt('Введите пароль');
+const requestPas = prompt('Введите пароль');
 if (requestPas === null) {
   message = 'Отмененно пользователь!';
 } else if (ADMIN_PASSWORD === requestPas) {

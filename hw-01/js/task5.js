@@ -6,7 +6,7 @@ const costToAustralia = 170;
 const costToIndia = 80;
 const costToJamaica = 120;
 
-let deliverProduct = prompt(
+const deliverProduct = prompt(
   'Укажите страну в которую хотите заказать доставку!',
 );
 
