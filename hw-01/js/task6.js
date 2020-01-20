@@ -11,10 +11,7 @@ do {
     continue;
   }
 
-  console.log(userInput);
-
   total += Number(userInput);
 } while (userInput !== null);
 
 console.log(`Task-6 : ${total}`);
-alert(`Введенная вами сумма чисел = ${total}`);
