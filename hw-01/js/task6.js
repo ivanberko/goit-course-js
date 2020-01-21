@@ -6,7 +6,9 @@ let total = 0;
 do {
   userInput = prompt('Введите любое число');
 
-  if (userInput !== null && Number.isNaN(Number(userInput))) {
+  if (userInput === null) continue;
+
+  if (Number.isNaN(Number(userInput))) {
     alert('"ERROR" вы ввели некорректное число :( попробуйте еще раз!');
     continue;
   }
