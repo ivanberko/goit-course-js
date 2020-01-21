@@ -1,15 +1,12 @@
 'use strict';
 
-console.log('TASK5------------------------')
+console.log('TASK5------------------------');
 
-const checkForSpam = function(messageStr) {
-  let arrayMessage = messageStr.split(' ');
-  for (let toFindSpam of arrayMessage) {
-    let wordLowerCase = toFindSpam.toLowerCase();
-    if (wordLowerCase.includes('spam') || wordLowerCase.includes('sale'))
-      return true;
-  }
-  return false;
+const checkForSpam = message => {
+  const wordLowerCase = message.toLowerCase();
+  if (wordLowerCase.includes('spam') || wordLowerCase.includes('sale')) {
+    return true;
+  } else return false;
 };
 
 console.log(checkForSpam('Latest technology news'));

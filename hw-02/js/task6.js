@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TASK6------------------------')
+console.log('TASK6------------------------');
 
 let input;
 const numbers = [];
@@ -12,7 +12,9 @@ do {
   if (Number.isNaN(Number(input)) || input === '') {
     alert('Введено не корректное значение');
     continue;
-  } else if (input >= 0 && input !== null) {
+  }
+
+  if (input >= 0 && input !== null) {
     numbers.push(Number(input));
   }
 } while (input !== null);

@@ -2,11 +2,11 @@
 
 console.log('TASK3------------------------')
 
-const findLongestWord = function(string) {
+const findLongestWord = string => {
   const arrayWords = string.split(' ');
   let longestWord = arrayWords[0];
   for (const arrayWord of arrayWords) {
-    arrayWord.length > longestWord.length ? (longestWord = arrayWord) : false;
+    if (arrayWord.length > longestWord.length) longestWord = arrayWord;
   }
   return longestWord;
 };
