@@ -4,9 +4,7 @@ console.log('TASK5------------------------');
 
 const checkForSpam = message => {
   const wordLowerCase = message.toLowerCase();
-  if (wordLowerCase.includes('spam') || wordLowerCase.includes('sale')) {
-    return true;
-  } else return false;
+  return (wordLowerCase.includes('spam') || wordLowerCase.includes('sale'));
 };
 
 console.log(checkForSpam('Latest technology news'));

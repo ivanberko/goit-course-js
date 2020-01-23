@@ -8,6 +8,8 @@ const countTotalSalary = function(employees) {
   return sum;
 };
 
+console.log(countTotalSalary({}))
+
 console.log(
   countTotalSalary({
     mango: 100,

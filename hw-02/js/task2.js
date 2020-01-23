@@ -1,11 +1,9 @@
 'use strict';
 
-console.log('TASK2------------------------')
+console.log('TASK2------------------------');
 
 const calculateEngravingPrice = (message, pricePerWord) => {
-  const arrayWords = message.split(' ');
-  pricePerWord *= arrayWords.length;
-  return pricePerWord;
+  return pricePerWord *= message.split(' ').length;
 };
 
 console.log(
