@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('TASK4------------------------')
+
 const countTotalSalary = function(employees) {
   let sum = 0;
   for (const key in employees) {

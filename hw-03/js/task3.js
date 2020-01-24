@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('TASK3------------------------')
+
 const findBestEmployee = employees => {
   let bestEmployee;
   let max = 0;
