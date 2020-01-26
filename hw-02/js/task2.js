@@ -3,7 +3,7 @@
 console.log('TASK2------------------------');
 
 const calculateEngravingPrice = (message, pricePerWord) => {
-  return pricePerWord *= message.split(' ').length;
+  return message.split(' ').length * pricePerWord;
 };
 
 console.log(

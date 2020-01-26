@@ -9,12 +9,11 @@ let total = 0;
 do {
   input = prompt(`Add number`);
   if (input !== null) {
+    if (Number.isNaN(Number(input))) {
+      alert('Введено не корректное значение');
+      continue;
+    }
     numbers.push(Number(input));
-  }
-
-  if (Number.isNaN(Number(input))) {
-    alert('Введено не корректное значение');
-    continue;
   }
 } while (input !== null);
 console.log(numbers);

@@ -9,11 +9,11 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-const getAllPropValues = function(arr, prop) {
+const getAllPropValues = (arr, prop) => {
   let arrValues = [];
 
   for (const obj of arr) {
-    if (obj[prop] !== undefined) {
+    if (prop in obj) {
       arrValues.push(obj[prop]);
     }
   }

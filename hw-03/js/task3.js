@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TASK3------------------------')
+console.log('TASK3------------------------');
 
 const findBestEmployee = employees => {
   let bestEmployee;

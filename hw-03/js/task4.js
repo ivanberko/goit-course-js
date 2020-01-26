@@ -2,11 +2,15 @@
 
 console.log('TASK4------------------------')
 
-const countTotalSalary = function(employees) {
+const countTotalSalary = employees => {
   let sum = 0;
-  for (const key in employees) {
-    sum += employees[key];
+  const selaryEmployees = Object.values(employees);
+  for (const selary of selaryEmployees) {
+    sum += selary;
   }
+  // for (const key in employees) {
+  //   sum += employees[key];
+  // }
   return sum;
 };
 
