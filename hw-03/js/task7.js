@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TASK7------------------------')
+console.log('TASK7------------------------');
 
 /*
  * Типов транзацкий всего два.
@@ -11,7 +11,7 @@ const Transaction = {
   WITHDRAW: 'withdraw',
 };
 
-const {DEPOSIT, WITHDRAW} = Transaction
+const { DEPOSIT, WITHDRAW } = Transaction;
 
 /*
  * Каждая транзакция это объект со свойствами: id, type и amount
@@ -28,8 +28,12 @@ const account = {
    * Метод создает и возвращает объект транзакции.
    * Принимает сумму и тип транзакции.
    */
-  createTransaction({amount, type, id}) {
-    this.transactions.push({amount, type, id})
+  createTransaction(amount, type) {
+    const transaction = {
+      amount,
+      type,
+    };
+    return transaction;
   },
 
   /*
@@ -38,10 +42,14 @@ const account = {
    * Вызывает createTransaction для создания объекта транзакции
    * после чего добавляет его в историю транзакций
    */
-  deposit(amount) {},
+  deposit(amount) {
+    this.balance += amount;
+    const transaction = this.createTransaction(amount, DEPOSIT);
+    this.transactions.push(transaction);
+  },
 
   /*
-   * Метод отвечающий за снятие суммы с баланса.
+   * Метод отвечающий за снятие суммы transactionс баланса.
    * Принимает сумму танзакции.
    * Вызывает createTransaction для создания объекта транзакции
    * после чего добавляет его в историю транзакций.
@@ -68,5 +76,7 @@ const account = {
   getTransactionTotal(type) {},
 };
 
-account.createTransaction({amount: 100, type: DEPOSIT, id: 'id-01'});
-console.log(account.transactions)
+
+account.deposit(3000);
+console.log(account.transactions);
+console.log(account.balance);
