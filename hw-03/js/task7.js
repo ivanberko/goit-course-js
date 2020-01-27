@@ -57,26 +57,55 @@ const account = {
    * Если amount больше чем текущий баланс, выводи сообщение
    * о том, что снятие такой суммы не возможно, недостаточно средств.
    */
-  withdraw(amount) {},
+  withdraw(amount) {
+    const transaction = this.createTransaction(amount, WITHDRAW);
+    this.transactions.push(transaction);
+    return amount <= this.balance
+      ? (this.balance -= amount)
+      : `Cнятие ${amount} не возможно, недостаточно средств`;
+  },
 
   /*
    * Метод возвращает текущий баланс
    */
-  getBalance() {},
+  getBalance() {
+    return this.balance;
+  },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    for (const item of this.transactions) {
+      if (item.id === id) return item;
+    }
+  },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {},
+  getTransactionTotal(type) {
+    let amountTotal = 0;
+    for (const item of this.transactions) {
+      if (item.type === type) {
+        amountTotal += item.amount;
+      }
+    }
+    return amountTotal;
+  },
 };
-
 
 account.deposit(3000);
 console.log(account.transactions);
-console.log(account.balance);
+console.log(account.getBalance());
+
+account.withdraw(1500);
+console.log(account.transactions);
+console.log(account.getBalance());
+
+console.log(account.getTransactionTotal(DEPOSIT));
+
+// account.transactions[0].id = 'id-01';
+
+// console.log(account.getTransactionDetails('id-01'));
