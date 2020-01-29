@@ -24,14 +24,12 @@ const account = {
   },
 
   deposit(amount) {
-    const transaction = this.createTransaction(amount, DEPOSIT);
-    this.transactions.push(transaction);
+    this.transactions.push(this.createTransaction(amount, DEPOSIT));
     this.balance += amount;
   },
 
   withdraw(amount) {
-    const transaction = this.createTransaction(amount, WITHDRAW);
-    this.transactions.push(transaction);
+    this.transactions.push(this.createTransaction(amount, WITHDRAW));
     return amount <= this.balance
       ? (this.balance -= amount)
       : `Cнятие ${amount} не возможно, недостаточно средств`;
