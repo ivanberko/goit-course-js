@@ -2,20 +2,22 @@
 
 console.log('TASK1------------------------');
 
+// Расставь отсутствующие this в методах объекта account.
+
 const account = {
   owner: 'Mango',
   balance: 24000,
   discount: 0.1,
   orders: ['order-1', 'order-2', 'order-3'],
   changeDiscount(value) {
-    discount = value;
+    this.discount = value;
   },
   showOrders() {
-    return orders;
+    return this.orders;
   },
   addOrder(cost, order) {
-    balance -= cost;
-    orders.push(order);
+    this.balance -= cost;
+    this.orders.push(order);
   },
 };
 
