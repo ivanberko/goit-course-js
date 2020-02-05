@@ -1,36 +1,41 @@
 'use strict';
 
+import users from './users.js';
+
 console.log('TASK1----------------------------------------------------');
 // Получить массив имен всех пользователей (поле name).
 const getUserNames = users => {
-
+  return users.map(user => user.name);
 };
 console.log(getUserNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
-// console.log('TASK2----------------------------------------------------');
-// // Получить массив объектов пользователей по цвету глаз (поле eyeColor)
-// const getUsersWithEyeColor = (users, color) => {
-//   // твой код
-// };
+console.log('TASK2----------------------------------------------------');
+// Получить массив объектов пользователей по цвету глаз (поле eyeColor)
+const getUsersWithEyeColor = (users, color) => {
+  return users.filter(user => user.eyeColor === color);
+};
 
-// console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
-// console.log('TASK3----------------------------------------------------');
-// //Получить массив имен пользователей по полу (поле gender).
-// const getUsersWithGender = (users, gender) => {
-//   // твой код
-// };
+console.log('TASK3----------------------------------------------------');
+//Получить массив имен пользователей по полу (поле gender).
+const getUsersWithGender = (users, gender) => {
+  return users.reduce((userName, user) => {
+    if (user.gender === gender) userName.push(user.name);
+    return userName;
+  }, []);
+};
 
-// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
-// console.log('TASK4----------------------------------------------------');
-// //Получить массив только неактивных пользователей (поле isActive)
-// const getInactiveUsers = users => {
-//   // твой код
-// };
+console.log('TASK4----------------------------------------------------');
+//Получить массив только неактивных пользователей (поле isActive)
+const getInactiveUsers = users => {
+  return users.filter(user => !user.isActive);
+};
 
-// console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 // console.log('TASK5----------------------------------------------------');
 // //Получить пользоваля (не массив) по email (поле email, он уникальный).
