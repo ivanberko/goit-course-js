@@ -83,13 +83,7 @@ console.log('TASK10---------------------------------------------------');
 //Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке
 const getSortedUniqueSkills = users => {
   const skillsAllUsers = users.flatMap(user => user.skills).sort();
-  const uniqueSkills = [];
-  skillsAllUsers.forEach(el => {
-    if (!uniqueSkills.includes(el)) {
-      uniqueSkills.push(el);
-    }
-  });
-  return uniqueSkills;
+  return skillsAllUsers.filter((el, i) => skillsAllUsers.indexOf(el) === i);
 };
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
