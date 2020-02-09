@@ -20,10 +20,7 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
 console.log('TASK3----------------------------------------------------');
 //Получить массив имен пользователей по полу (поле gender).
 const getUsersWithGender = (users, gender) => {
-  return users.reduce((userName, user) => {
-    if (user.gender === gender) userName.push(user.name);
-    return userName;
-  }, []);
+  return users.filter(user => user.gender === gender).map(user => user.name);
 };
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
@@ -60,10 +57,9 @@ console.log(calculateTotalBalance(users)); // 20916
 console.log('TASK8----------------------------------------------------');
 //Массив имен всех пользователей у которых есть друг с указанным именем.
 const getUsersWithFriend = (users, friendName) => {
-  return users.reduce((userName, user) => {
-    if (user.friends.includes(friendName)) userName.push(user.name);
-    return userName;
-  }, []);
+  return users
+    .filter(user => user.friends.includes(friendName))
+    .map(user => user.name);
 };
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
@@ -71,10 +67,11 @@ console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sher
 console.log('TASK9----------------------------------------------------');
 //Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 const getNamesSortedByFriendsCount = users => {
-  const compareNumberFriends = users.sort((first, second) => {
-    return first.friends.length - second.friends.length;
-  });
-  return compareNumberFriends.map(user => user.name);
+  return users
+    .sort((first, second) => {
+      return first.friends.length - second.friends.length;
+    })
+    .map(user => user.name);
 };
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
@@ -84,7 +81,7 @@ console.log('TASK10---------------------------------------------------');
 const getSortedUniqueSkills = users => {
   return users
     .flatMap(user => user.skills)
-    .filter((el, i, arr) => arr.indexOf(el) === i)
+    .filter((el, i, arr) => arr.indexOf(el) === i) // отфильтровуем повоторяющиеся умения
     .sort();
 };
 console.log(getSortedUniqueSkills(users));
