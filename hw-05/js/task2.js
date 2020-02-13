@@ -3,10 +3,10 @@
 console.log('TASK2----------------------------------------------------');
 
 class User {
-  constructor(data) {
-    this.name = data.name;
-    this.age = data.age;
-    this.followers = data.followers;
+  constructor({ name, age, followers }) {
+    this.name = name;
+    this.age = age;
+    this.followers = followers;
   }
 
   getInfo() {

@@ -23,10 +23,10 @@ class Car {
    *  isOn - заведен ли автомобиль, значения true или false. Изначально false
    *  distance - общий киллометраж, изначально 0
    */
-  constructor(data) {
+  constructor({ price, maxSpeed }) {
     this.speed = 0;
-    this._price = data.price;
-    this.maxSpeed = data.maxSpeed;
+    this._price = price;
+    this.maxSpeed = maxSpeed;
     this.isOn = false;
     this.distance = 0;
   }
@@ -115,4 +115,3 @@ Car.getSpecs(mustang);
 console.log(mustang.price); // 2000
 mustang.price = 4000;
 console.log(mustang.price); // 4000
-

@@ -13,7 +13,7 @@ class Storage {
 
   // получает новый товар и добавляет его к текущим
   addItem(item) {
-    return this.items.push(item);
+    this.items.push(item);
   }
 
   // получет товар и, если он есть, удаляет его из текущих
