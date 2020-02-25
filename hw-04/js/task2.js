@@ -1,4 +1,3 @@
-'use strict';
 
 console.log('TASK2------------------------');
 
@@ -12,11 +11,11 @@ const inventory = {
   remove(itemName) {
     console.log(`Removing ${itemName} from inventory`);
 
-    this.items = this.items.filter(item => item !== itemName);
+    this.items = this.items.filter((item) => item !== itemName);
   },
 };
 
-const invokeInventoryAction = function(itemName, action) {
+const invokeInventoryAction = function (itemName, action) {
   console.log(`Invoking action on ${itemName}`);
   action.call(inventory, itemName);
 };

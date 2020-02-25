@@ -1,8 +1,7 @@
-'use strict';
 
 console.log('TASK5------------------------');
 
-const checkForSpam = message => {
+const checkForSpam = (message) => {
   const wordLowerCase = message.toLowerCase();
   return (wordLowerCase.includes('spam') || wordLowerCase.includes('sale'));
 };

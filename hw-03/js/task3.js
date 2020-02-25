@@ -1,8 +1,7 @@
-'use strict';
 
 console.log('TASK3------------------------');
 
-const findBestEmployee = employees => {
+const findBestEmployee = (employees) => {
   let bestEmployee;
   let max = 0;
   for (const key in employees) {

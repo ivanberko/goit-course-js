@@ -1,4 +1,3 @@
-'use strict';
 
 const costToChina = 100;
 const costToChile = 250;
@@ -11,7 +10,7 @@ const deliverProduct = prompt(
 );
 
 if (deliverProduct === null) {
-  console.log(`Task-5 : Доставка не выбрана`);
+  console.log('Task-5 : Доставка не выбрана');
 } else {
   switch (deliverProduct.toLowerCase()) {
     case 'китай':
@@ -34,11 +33,11 @@ if (deliverProduct === null) {
         `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToIndia} кредитов`,
       );
       break;
-    case 'ямайка':console.log(
-        `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToJamaica} кредитов`,
-      );
+    case 'ямайка': console.log(
+      `Task-5 : Доставка в ${deliverProduct} будет стоить ${costToJamaica} кредитов`,
+    );
       break;
     default:
-      console.log(`Task-5 : В вашей стране доставка не доступна`);
+      console.log('Task-5 : В вашей стране доставка не доступна');
   }
 }

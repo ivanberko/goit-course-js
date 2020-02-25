@@ -1,4 +1,3 @@
-'use strict';
 
 console.log('TASK5----------------------------------------------------');
 
@@ -13,6 +12,7 @@ class Car {
       `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`,
     );
   }
+
   /*
    * Конструктор получает объект настроек.
    *
@@ -67,10 +67,9 @@ class Car {
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-    this.speed =
-      this.speed + value <= this.maxSpeed
-        ? (this.speed += value)
-        : this.maxSpeed;
+    this.speed = this.speed + value <= this.maxSpeed
+      ? (this.speed += value)
+      : this.maxSpeed;
   }
 
   /*

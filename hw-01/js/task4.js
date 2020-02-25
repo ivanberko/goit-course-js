@@ -1,4 +1,3 @@
-'use strict';
 
 const credits = 23580;
 const pricePerDroid = 3000;
@@ -11,9 +10,10 @@ if (сountDroid === null) {
   const totalPrice = сountDroid * pricePerDroid;
   if (credits < totalPrice) {
     alert('Недостаточно средств на счету!');
-  } else
+  } else {
     alert(
-      `Вы купили ${сountDroid} дроидов, на счету осталось ${credits -
-        totalPrice} кредитов.`,
+      `Вы купили ${сountDroid} дроидов, на счету осталось ${credits
+        - totalPrice} кредитов.`,
     );
+  }
 }

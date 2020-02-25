@@ -1,6 +1,5 @@
-'use strict';
 
-console.log('TASK6------------------------')
+console.log('TASK6------------------------');
 
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
@@ -12,7 +11,7 @@ const products = [
 const calculateTotalPrice = (allProdcuts, productName) => {
   for (const obj of allProdcuts) {
     if (productName === obj.name) {
-      return obj.price * obj.quantity
+      return obj.price * obj.quantity;
     }
   }
 };

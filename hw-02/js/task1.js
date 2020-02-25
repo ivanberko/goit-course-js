@@ -1,12 +1,11 @@
-'use strict';
 
-console.log('TASK1------------------------')
+console.log('TASK1------------------------');
 
-const logItems = array => {
+const logItems = (array) => {
   for (let i = 0; i < array.length; i++) {
-    console.log(`${i + 1} - ${array[i]}`)
+    console.log(`${i + 1} - ${array[i]}`);
   }
-}
+};
 
 logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
 

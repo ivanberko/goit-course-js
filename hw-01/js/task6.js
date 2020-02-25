@@ -1,4 +1,3 @@
-'use strict';
 
 let userInput;
 let total = 0;

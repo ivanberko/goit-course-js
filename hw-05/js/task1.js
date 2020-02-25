@@ -1,5 +1,3 @@
-'use strict';
-
 console.log('TASK1----------------------------------------------------');
 
 const Account = function({ login, email }) {
@@ -26,5 +24,3 @@ const poly = new Account({
 });
 
 poly.getInfo(); // Login: Poly, Email: poly@mail.com
-
-

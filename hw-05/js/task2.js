@@ -1,7 +1,4 @@
-'use strict';
-
 console.log('TASK2----------------------------------------------------');
-
 class User {
   constructor({ name, age, followers }) {
     this.name = name;

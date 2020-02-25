@@ -1,6 +1,5 @@
-'use strict';
 
-console.log('TASK5------------------------')
+console.log('TASK5------------------------');
 
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
@@ -10,7 +9,7 @@ const products = [
 ];
 
 const getAllPropValues = (arr, prop) => {
-  let arrValues = [];
+  const arrValues = [];
 
   for (const obj of arr) {
     if (prop in obj) {

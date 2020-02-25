@@ -1,10 +1,7 @@
-'use strict';
 
 console.log('TASK4------------------------');
 
-const formatString = string => {
-  return (string.length <= 40) ?  string : `${string.slice(0, 40)}...`;
-}
+const formatString = (string) => ((string.length <= 40) ? string : `${string.slice(0, 40)}...`);
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 

@@ -1,6 +1,5 @@
-'use strict';
 
-console.log('TASK1------------------------')
+console.log('TASK1------------------------');
 
 const user = {
   name: 'Mango',
@@ -13,7 +12,7 @@ user.mood = 'happy';
 user.hobby = 'skydiving';
 user.premium = false;
 
-const showObject = objKeys => {
+const showObject = (objKeys) => {
   for (const key of objKeys) {
     console.log(`${key}: ${user[key]}`);
   }

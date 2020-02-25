@@ -1,4 +1,3 @@
-'use strict';
 
 const ADMIN_PASSWORD = 'jqueryismyjam';
 let message;
@@ -12,4 +11,4 @@ if (requestPas === null) {
   message = 'Доступ запрещен, неверный пароль!';
 }
 alert(message);
-console.log(`Task-3 : ${message}`)
+console.log(`Task-3 : ${message}`);

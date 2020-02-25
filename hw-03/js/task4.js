@@ -1,8 +1,7 @@
-'use strict';
 
 console.log('TASK4------------------------');
 
-const countTotalSalary = employees => {
+const countTotalSalary = (employees) => {
   let sum = 0;
   for (const key in employees) {
     sum += employees[key];

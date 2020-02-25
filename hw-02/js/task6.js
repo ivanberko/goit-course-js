@@ -1,4 +1,3 @@
-'use strict';
 
 console.log('TASK6------------------------');
 
@@ -7,7 +6,7 @@ const numbers = [];
 let total = 0;
 
 do {
-  input = prompt(`Add number`);
+  input = prompt('Add number');
   if (input !== null) {
     if (Number.isNaN(Number(input))) {
       alert('Введено не корректное значение');

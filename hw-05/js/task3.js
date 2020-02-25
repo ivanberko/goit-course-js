@@ -1,11 +1,9 @@
-'use strict';
-
 console.log('TASK3----------------------------------------------------');
-
 class Storage {
   constructor(products) {
     this.items = products;
   }
+
   // возвращает массив текущих товаров
   getItems() {
     return this.items;
@@ -18,7 +16,7 @@ class Storage {
 
   // получет товар и, если он есть, удаляет его из текущих
   removeItem(item) {
-    this.items = this.items.filter(elem => elem !== item);
+    this.items = this.items.filter((elem) => elem !== item);
   }
 }
 

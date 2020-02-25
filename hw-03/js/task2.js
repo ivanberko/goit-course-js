@@ -1,10 +1,7 @@
-'use strict';
 
-console.log('TASK2------------------------')
+console.log('TASK2------------------------');
 
-const countProps = obj => {
- return Object.keys(obj).length;
-}
+const countProps = (obj) => Object.keys(obj).length;
 
 console.log(countProps({}));
 console.log(countProps({ name: 'Mango', age: 2 }));
