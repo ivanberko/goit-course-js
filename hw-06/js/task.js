@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable import/extensions */
 
 import users from './users.js';
 

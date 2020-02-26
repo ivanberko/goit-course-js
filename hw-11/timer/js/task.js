@@ -1,27 +1,41 @@
-function getCountdown() {
-  setInterval(() => {
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
+const refs = {
+  jsDayFace: document.querySelector('.js-timeface'),
+  jsHoursFace: document.querySelector('.js-hoursface'),
+  jsMinsFace: document.querySelector('.js-minsface'),
+  jsSecsFace: document.querySelector('.js-secsface'),
+};
+
+const countdown = () => {
+  const intervalId = setInterval(() => {
     const targetDate = new Date(2020, 1, 29);
     const nowDate = new Date();
-    const time = targetDate - nowDate;
-    let days = Math.floor(time / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-    let secs = Math.floor((time % (1000 * 60)) / 1000);
-
-    if (days < 10) days = `0${days}`;
-    if (hours < 10) hours = `0${hours}`;
-    if (mins < 10) mins = `0${mins}`;
-    if (secs < 10) secs = `0${secs}`;
+    const deltaTime = targetDate - nowDate;
+    const time = new Date(deltaTime);
+    const days = pad(time.getDate());
+    const hours = pad(time.getHours());
+    const mins = pad(time.getMinutes());
+    const secs = pad(time.getSeconds());
 
     if (time < 0) {
-      clearInterval(getCountdown);
+      clearInterval(intervalId);
       console.log('Time is over!');
     } else {
-      console.log(
-        `Days: ${days} Hours: ${hours} Minuts: ${mins} Seconds: ${secs}`,
-      );
+      updateClockface(`${days}`, `${hours}`, `${mins}`, `${secs}`);
     }
   }, 1000);
+};
+
+// countdown();
+
+function pad(val) {
+  return String(val).padStart(2, '0');
 }
 
-getCountdown();
+function updateClockface(days, hours, mins, secs) {
+  refs.jsDayFace.textContent = days;
+  refs.jsHoursFace.textContent = hours;
+  refs.jsMinsFace.textContent = mins;
+  refs.jsSecsFace.textContent = secs;
+}

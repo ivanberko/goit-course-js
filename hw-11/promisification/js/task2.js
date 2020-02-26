@@ -6,7 +6,7 @@ const users = [
   { name: 'Lux', active: false },
 ];
 
-const toggleUserState = (allUsers, userName) => new Promise((resolve, reject) => {
+const toggleUserState = (allUsers, userName) => new Promise((resolve) => {
   setTimeout(
     () => resolve(
       allUsers.map((user) => (user.name === userName ? { ...user, active: !user.active } : user)),
