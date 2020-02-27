@@ -9,14 +9,13 @@ const refs = {
 
 const countdown = () => {
   const intervalId = setInterval(() => {
-    const targetDate = new Date(2020, 1, 29);
+    const targetDate = new Date(2020, 2, 7);
     const nowDate = new Date();
-    const deltaTime = targetDate - nowDate;
-    const time = new Date(deltaTime);
-    const days = pad(time.getDate());
-    const hours = pad(time.getHours());
-    const mins = pad(time.getMinutes());
-    const secs = pad(time.getSeconds());
+    const time = targetDate - nowDate;
+    const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+    const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+    const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
 
     if (time < 0) {
       clearInterval(intervalId);
@@ -27,7 +26,7 @@ const countdown = () => {
   }, 1000);
 };
 
-// countdown();
+countdown();
 
 function pad(val) {
   return String(val).padStart(2, '0');
