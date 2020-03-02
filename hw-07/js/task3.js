@@ -18,16 +18,23 @@ const images = [
 
 const galleryById = document.getElementById('gallery');
 
-images.forEach((element) => {
-  const item = document.createElement('li');
-  const img = document.createElement('img');
-  img.src = element.url;
-  img.alt = element.alt;
-  img.style.width = 'auto';
-  img.style.height = '200px';
-  item.style.listStyle = 'none';
-  item.style.padding = '5px';
-  galleryById.style.display = 'flex';
-  item.insertAdjacentElement('beforeend', img);
-  galleryById.insertAdjacentElement('beforeend', item);
-});
+const createImageInGallery = function(array) {
+  return array.map((element) => {
+    const item = document.createElement('li');
+    const img = document.createElement('img');
+    img.src = element.url;
+    img.alt = element.alt;
+    img.style.width = 'auto';
+    img.style.height = '200px';
+    item.style.listStyle = 'none';
+    item.style.padding = '5px';
+    galleryById.style.display = 'flex';
+    item.insertAdjacentElement('beforeend', img);
+    return item.outerHTML;
+  });
+};
+
+galleryById.insertAdjacentHTML(
+  'afterbegin',
+  createImageInGallery(images).join(''),
+);
