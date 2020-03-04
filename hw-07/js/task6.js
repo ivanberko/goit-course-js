@@ -2,8 +2,7 @@ const inputValid = document.getElementById('validation-input');
 const validCharacters = +inputValid.getAttribute('data-length');
 
 inputValid.onchange = function() {
-  inputValid.textContent = inputValid.value;
-  if (inputValid.textContent.length === validCharacters) {
+  if (inputValid.value.length === validCharacters) {
     inputValid.classList.add('valid');
     inputValid.classList.remove('invalid');
   } else {
