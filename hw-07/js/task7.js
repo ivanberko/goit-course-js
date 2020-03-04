@@ -3,6 +3,6 @@ const spanText = document.getElementById('text');
 
 spanText.style.fontSize = `${inputControl.value}px`;
 
-inputControl.onchange = function() {
+inputControl.oninput = function() {
   spanText.style.fontSize = `${inputControl.value}px`;
 };
