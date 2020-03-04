@@ -24,11 +24,6 @@ const createImageInGallery = function(array) {
     const img = document.createElement('img');
     img.src = element.url;
     img.alt = element.alt;
-    img.style.width = 'auto';
-    img.style.height = '200px';
-    item.style.listStyle = 'none';
-    item.style.padding = '5px';
-    galleryById.style.display = 'flex';
     item.insertAdjacentElement('beforeend', img);
     return item.outerHTML;
   });

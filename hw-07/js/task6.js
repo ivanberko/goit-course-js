@@ -7,9 +7,9 @@ inputValid.onchange = function() {
     inputValid.classList.remove('invalid');
   } else {
     inputValid.classList.add('invalid');
-  }
-  if (inputValid.value === '') {
-    inputValid.classList.remove('valid');
-    inputValid.classList.remove('invalid');
+    if (inputValid.value === '') {
+      inputValid.classList.remove('valid');
+      inputValid.classList.remove('invalid');
+    }
   }
 };
