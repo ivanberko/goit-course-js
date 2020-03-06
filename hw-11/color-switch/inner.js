@@ -30,8 +30,7 @@ function start() {
   isActive = true;
   timerId = setInterval(() => {
     const bgc = colors[randomIntegerFromInterval(0, colors.length - 1)];
-    const body = document.querySelector('body');
-    body.style.backgroundColor = bgc;
+    document.body.style.backgroundColor = bgc;
   }, 1000);
 }
 

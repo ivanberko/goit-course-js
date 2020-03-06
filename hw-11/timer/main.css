@@ -29,7 +29,7 @@
   text-align: center;
   border: 5px solid rgb(13, 66, 63);
   border-radius: 8px;
-  box-shadow: inset 0 0 15px 10px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 15px 10px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
 
@@ -38,4 +38,26 @@
 .js-minsface,
 .js-secsface {
   font-size: 45px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto 0;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: rgb(20, 104, 99);
+  background-color: rgb(34, 238, 228);
+  border-radius: 8px;
+  font-weight: 700;
+  border: 2px solid rgb(13, 66, 63);
+  box-shadow: inset 0 0 15px 10px rgba(0, 0, 0, 0.5);
+  outline: none;
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  background-color: rgb(13, 77, 73);
+  color: rgb(85, 216, 207);
 }
