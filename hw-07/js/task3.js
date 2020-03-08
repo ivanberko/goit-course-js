@@ -18,18 +18,13 @@ const images = [
 
 const galleryById = document.getElementById('gallery');
 
-const createImageInGallery = function(array) {
-  return array.map((element) => {
-    const item = document.createElement('li');
-    const img = document.createElement('img');
-    img.src = element.url;
-    img.alt = element.alt;
-    item.insertAdjacentElement('beforeend', img);
-    return item.outerHTML;
-  });
-};
+const list = images.reduce((imgStr, element) => {
+  const item = document.createElement('li');
+  const img = document.createElement('img');
+  img.src = element.url;
+  img.alt = element.alt;
+  item.append(img);
+  return imgStr + item.outerHTML;
+}, '');
 
-galleryById.insertAdjacentHTML(
-  'afterbegin',
-  createImageInGallery(images).join(''),
-);
+galleryById.insertAdjacentHTML('afterbegin', list);
