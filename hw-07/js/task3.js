@@ -18,13 +18,9 @@ const images = [
 
 const galleryById = document.getElementById('gallery');
 
-const list = images.reduce((imgStr, element) => {
-  const item = document.createElement('li');
-  const img = document.createElement('img');
-  img.src = element.url;
-  img.alt = element.alt;
-  item.append(img);
-  return imgStr + item.outerHTML;
-}, '');
+const list = images.reduce(
+  (imgStr, element) => `${imgStr}<li><img src ="${element.url}" alt="${element.alt}"></img></li>`,
+  '',
+);
 
 galleryById.insertAdjacentHTML('afterbegin', list);
