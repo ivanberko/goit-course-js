@@ -24,14 +24,13 @@ let timerId;
 const randomIntegerFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 function start() {
-  if (isActive) {
-    return;
+  if (!isActive) {
+    isActive = true;
+    timerId = setInterval(() => {
+      const bgc = colors[randomIntegerFromInterval(0, colors.length - 1)];
+      document.body.style.backgroundColor = bgc;
+    }, 1000);
   }
-  isActive = true;
-  timerId = setInterval(() => {
-    const bgc = colors[randomIntegerFromInterval(0, colors.length - 1)];
-    document.body.style.backgroundColor = bgc;
-  }, 1000);
 }
 
 function stop() {
