@@ -26,7 +26,7 @@ const createGalleryItems = gallery.map((elem) => {
 
 galleryList.append(...createGalleryItems);
 
-const handleKeyUp = function(event) {
+const handleDown = function(event) {
   switch (event.code) {
     case 'Escape':
       lightboxImg.removeAttribute('src');
@@ -64,21 +64,19 @@ const handleKeyUp = function(event) {
 
 const handleOpenModal = function(event) {
   event.preventDefault();
-  if (event.target.tagName !== 'IMG') {
-    return;
+  if (event.target.tagName === 'IMG') {
+    lightboxImg.src = event.target.dataset.source;
+    lightbox.classList.add('is-open');
+    document.addEventListener('keyup', handleDown);
   }
-  lightboxImg.src = event.target.dataset.source;
-  lightbox.classList.add('is-open');
-  document.addEventListener('keyup', handleKeyUp);
 };
 
 const handleCloseModal = function(event) {
-  if (event.target.tagName === 'IMG') {
-    return;
+  if (event.target.tagName !== 'IMG') {
+    lightboxImg.removeAttribute('src');
+    lightbox.classList.remove('is-open');
+    document.removeEventListener('keyup', handleDown);
   }
-  lightboxImg.removeAttribute('src');
-  lightbox.classList.remove('is-open');
-  document.removeEventListener('keyup', handleKeyUp);
 };
 
 galleryList.addEventListener('click', handleOpenModal);
