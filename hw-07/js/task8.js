@@ -9,24 +9,26 @@ function getRandomInt(max) {
 }
 
 function createBoxes(amount) {
-  let widthBox = 20;
-  let heightBox = 20;
-  for (let i = 0; i < amount; i += 1) {
-    const boxDiv = document.createElement('div');
-    const red = getRandomInt(255);
-    const green = getRandomInt(255);
-    const blue = getRandomInt(255);
-    boxDiv.style.width = `${(widthBox += 10)}px`;
-    boxDiv.style.height = `${(heightBox += 10)}px`;
-    boxDiv.style.backgroundColor = `rgb(${red},${green},${blue})`;
-    arrayOfColorBoxes.push(boxDiv);
+  if (amount >= 1 && amount <= 100) {
+    let widthBox = 20;
+    let heightBox = 20;
+    for (let i = 0; i < amount; i += 1) {
+      const boxDiv = document.createElement('div');
+      boxDiv.style.width = `${(widthBox += 10)}px`;
+      boxDiv.style.height = `${(heightBox += 10)}px`;
+      boxDiv.style.backgroundColor = `rgb(${getRandomInt(255)},${getRandomInt(
+        255,
+      )},${getRandomInt(255)})`;
+      arrayOfColorBoxes.push(boxDiv);
+    }
+    containerBoxes.append(...arrayOfColorBoxes);
   }
-  containerBoxes.append(...arrayOfColorBoxes);
 }
 
 function destroyBoxes() {
   containerBoxes.innerHTML = '';
   arrayOfColorBoxes.splice(0);
+  inputNumberOfDiv.value = '';
 }
 
 inputNumberOfDiv.onblur = function() {
