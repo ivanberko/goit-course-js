@@ -1,0 +1,17 @@
+<h1 class="country-box__title">{{name}}</h1>
+<div class="country-box__desc">
+  <div class="country-box__info">
+    <div class="capital"><b>Capital:</b> {{capital}}</div>
+    <div class="population"><b>Population:</b> {{population}}</div>
+    <div class="timezones"><b>Timezones:</b> {{timezones}}</div>
+    <div class="region"><b>Region:</b> {{region}}</div>
+    <ul class="list-languages">
+      <b>Languages:</b> {{#each languages}}
+      <li>&#9675 {{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="flag-img"><img src="{{flag}}" alt="" width="400" /></div>
+</div>
+
+
