@@ -15,14 +15,30 @@ import photosService from './js/photos-service';
 const refs = {
   gallery: document.querySelector('.gallery'),
   inputForm: document.querySelector('#search-form'),
+  loadMoreBtn: document.querySelector('button[type="button"]'),
 };
-console.dir(refs.inputForm.elements.query.value);
+
+function loadMoreButtonHandle() {
+  axiosArticles();
+}
 
 function clearList() {
   refs.gallery.innerHTML = '';
 }
 
-const handelInput = (event) => {
+function isertItemCard(item) {
+  const markap = itemCadrTempl(item);
+  refs.gallery.insertAdjacentHTML('beforeend', markap);
+}
+
+function axiosArticles() {
+  photosService
+    .axiosArticles()
+    .then(isertItemCard)
+    .catch((error) => console.warn(error));
+}
+
+const handleInput = (event) => {
   event.preventDefault();
 
   clearList();
@@ -32,11 +48,10 @@ const handelInput = (event) => {
 
   photosService.resetPage();
 
-  photosService.axiosArticles().then((data) => {
-    refs.gallery.insertAdjacentHTML('beforeend', itemCadrTempl(data));
-  });
+  axiosArticles();
 
   input.value = '';
 };
 
-refs.inputForm.addEventListener('submit', handelInput);
+refs.inputForm.addEventListener('submit', handleInput);
+refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle);
