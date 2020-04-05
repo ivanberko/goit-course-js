@@ -1,6 +1,5 @@
 import './style.css';
 import PNotify from 'pnotify/dist/es/PNotify';
-// import PNotifyButtons from 'pnotify/dist/es/PNotifyButtons';
 import 'pnotify/dist/PNotifyBrightTheme.css';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import * as basicLightbox from 'basiclightbox';
@@ -20,17 +19,18 @@ function clearList() {
 }
 
 function isertItemCard(item) {
-  const markap = itemCadrTempl(item);
-  refs.gallery.insertAdjacentHTML('beforeend', markap);
-  // const a = document.documentElement.scrollHeight;
-  // const b = document.documentElement.clientHeight;
-  // console.log(a);
-  // console.log(b);
-  // console.log(a - b);
-  // window.scrollTo({
-  //   top: a - b,
-  //   behavior: 'smooth',
-  // });
+  const markup = itemCadrTempl(item);
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+
+  if (markup) {
+    const quantityRowsOfscrol =
+      document.querySelector('.gallery-item').offsetHeight * 3;
+
+    window.scrollTo({
+      top: refs.gallery.offsetHeight - quantityRowsOfscrol,
+      behavior: 'smooth',
+    });
+  }
 }
 
 function axiosArticles() {
@@ -61,6 +61,13 @@ const handleInput = (event) => {
   clearList();
 
   const input = refs.inputForm.elements.query;
+
+  if (!input.value) {
+    PNotify.info({
+      text: 'No results were found for your request.',
+    });
+    return;
+  }
   photosService.searchQuery = input.value;
 
   photosService.resetPage();
@@ -71,6 +78,12 @@ const handleInput = (event) => {
 };
 
 function loadMoreButtonHandle() {
+  if (!photosService.searchQuery) {
+    PNotify.info({
+      text: 'No results were found for your request.',
+    });
+    return;
+  }
   axiosArticles();
 }
 
@@ -89,3 +102,7 @@ refs.inputForm.addEventListener('submit', handleInput);
 refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle);
 
 refs.gallery.addEventListener('click', handleClickImg);
+
+// document.addEventListener('readystatechange', () =>
+//   console.log(document.readyState),
+// );

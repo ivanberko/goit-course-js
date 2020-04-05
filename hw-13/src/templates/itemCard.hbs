@@ -1,7 +1,9 @@
 {{#each this}}
-<li>
+<li class="gallery-item">
   <div class="photo-card">
-    <img src="{{webformatURL}}" alt="" data-origin-url="{{largeImageURL}}" />
+    <div class="photo-card-img">
+      <img src="{{webformatURL}}" alt="" data-origin-url="{{largeImageURL}}" />
+    </div>
 
     <div class="stats">
       <p class="stats-item">
@@ -9,15 +11,15 @@
         <span class="stats-count">{{likes}}</span>
       </p>
       <p class="stats-item">
-        <i class="material-icons purple">visibility</i>
+        <i class="material-icons color-purple">visibility</i>
         <span class="stats-count">{{views}}</span>
       </p>
       <p class="stats-item">
-        <i class="material-icons purple">comment</i>
+        <i class="material-icons color-purple">comment</i>
         <span class="stats-count">{{comments}}</span>
       </p>
       <p class="stats-item">
-        <i class="material-icons purple">cloud_download</i>
+        <i class="material-icons color-purple">cloud_download</i>
         <span class="stats-count">{{downloads}}</span>
       </p>
     </div>
