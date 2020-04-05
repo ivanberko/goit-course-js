@@ -3,8 +3,6 @@ import axios from 'axios';
 const baseUrl = 'https://pixabay.com/api';
 const apiKey = '13689220-f8624404383f6a2586dfba74c';
 
-// https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=car&page=1&per_page=12&key=13689220-f8624404383f6a2586dfba74c
-
 export default {
   page: 1,
   query: '',

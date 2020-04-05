@@ -1,24 +1,24 @@
 {{#each this}}
 <li>
   <div class="photo-card">
-    <img src="{{webformatURL}}" alt="" width="480"/>
+    <img src="{{webformatURL}}" alt="" data-origin-url="{{largeImageURL}}" />
 
     <div class="stats">
       <p class="stats-item">
-        <i class="material-icons">thumb_up</i>
-        {{likes}}
+        <i class="material-icons color-purple">thumb_up</i>
+        <span class="stats-count">{{likes}}</span>
       </p>
       <p class="stats-item">
-        <i class="material-icons">visibility</i>
-        {{views}}
+        <i class="material-icons purple">visibility</i>
+        <span class="stats-count">{{views}}</span>
       </p>
       <p class="stats-item">
-        <i class="material-icons">comment</i>
-        {{comments}}
+        <i class="material-icons purple">comment</i>
+        <span class="stats-count">{{comments}}</span>
       </p>
       <p class="stats-item">
-        <i class="material-icons">cloud_download</i>
-        {{downloads}}
+        <i class="material-icons purple">cloud_download</i>
+        <span class="stats-count">{{downloads}}</span>
       </p>
     </div>
   </div>
