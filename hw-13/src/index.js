@@ -23,8 +23,10 @@ function isertItemCard(item) {
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 
   if (markup) {
-    window.scrollTo({
-      top: refs.gallery.offsetHeight - document.documentElement.clientHeight,
+    console.dir(refs.gallery);
+    const offsetHeightForm = refs.inputForm.offsetHeight;
+    window.scrollBy({
+      top: document.documentElement.clientHeight - offsetHeightForm,
       behavior: 'smooth',
     });
   }
