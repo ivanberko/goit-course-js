@@ -5,7 +5,6 @@
 
 img {
   display: block;
-  /* width: 100%; */
   height: 100%;
   margin: 0 auto;
 }
@@ -20,10 +19,15 @@ body {
   text-align: center;
   height: 200px;
   overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.photo-card-img img {
+  cursor: pointer;
 }
 
 input[type='text'] {
-  width: 90%;
+  width: 85%;
   height: 40px;
   padding: 0 22px;
   border: none;
@@ -31,19 +35,21 @@ input[type='text'] {
 }
 
 .search-form {
-  margin: 10px 0;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 20px;
   display: flex;
   border: 4px solid #8842d5;
   border-radius: 5px;
 }
 
 button {
-  width: 10%;
+  width: 15%;
   height: 40px;
   background-color: #8842d5;
   border: none;
   color: white;
-  padding: 0 22px;
+  padding: 0 5px;
   text-decoration: none;
   cursor: pointer;
   border: none;
@@ -53,13 +59,14 @@ button {
 .load-more {
   display: block;
   margin: 0 auto;
-  min-width: 50%;
+  min-width: 30%;
   border-radius: 5px;
 }
 
 .gallery {
+  width: 100%;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -85,14 +92,11 @@ button {
   height: 100%;
 }
 
-.photo-card img {
-  margin-bottom: 10px;
-}
-
 .stats {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  line-height: 1;
 }
 
 .stats-item {
@@ -109,4 +113,31 @@ button {
 
 .material-icons.color-purple {
   color: #8842d5;
+}
+
+@media (min-width: 963px) and (max-width: 1275px) {
+  .gallery li {
+    width: 33%;
+  }
+  .gallery li:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 648px) and (max-width: 962px) {
+  .gallery li {
+    width: 49%;
+  }
+  .gallery li:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 647px) {
+  .gallery li {
+    width: 60%;
+  }
+  .gallery li:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }

@@ -1,10 +1,10 @@
 import './style.css';
 import PNotify from 'pnotify/dist/es/PNotify';
 import 'pnotify/dist/PNotifyBrightTheme.css';
-import 'basiclightbox/dist/basicLightbox.min.css';
-import * as basicLightbox from 'basiclightbox';
+
 import itemCadrTempl from './templates/itemCard.hbs';
-import photosService from './js/photos-service';
+import apiService from './js/apiService';
+import isOpenLightboxHandle from './js/basicLightbox';
 
 PNotify.defaults.delay = 1000;
 
@@ -23,18 +23,15 @@ function isertItemCard(item) {
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 
   if (markup) {
-    const quantityRowsOfscrol =
-      document.querySelector('.gallery-item').offsetHeight * 3;
-
     window.scrollTo({
-      top: refs.gallery.offsetHeight - quantityRowsOfscrol,
+      top: refs.gallery.offsetHeight - document.documentElement.clientHeight,
       behavior: 'smooth',
     });
   }
 }
 
 function axiosArticles() {
-  photosService
+  apiService
     .axiosArticles()
     .then((res) => {
       isertItemCard(res);
@@ -68,9 +65,9 @@ const handleInput = (event) => {
     });
     return;
   }
-  photosService.searchQuery = input.value;
+  apiService.searchQuery = input.value;
 
-  photosService.resetPage();
+  apiService.resetPage();
 
   axiosArticles();
 
@@ -78,7 +75,7 @@ const handleInput = (event) => {
 };
 
 function loadMoreButtonHandle() {
-  if (!photosService.searchQuery) {
+  if (!apiService.searchQuery) {
     PNotify.info({
       text: 'No results were found for your request.',
     });
@@ -87,22 +84,8 @@ function loadMoreButtonHandle() {
   axiosArticles();
 }
 
-function handleClickImg(e) {
-  const imageURL = e.target;
-  if (imageURL.nodeName === 'IMG') {
-    const showLightbox = basicLightbox.create(`
-    <img src=${imageURL.getAttribute('data-origin-url')} alt="">
-`);
-    showLightbox.show();
-  }
-}
-
 refs.inputForm.addEventListener('submit', handleInput);
 
 refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle);
 
-refs.gallery.addEventListener('click', handleClickImg);
-
-// document.addEventListener('readystatechange', () =>
-//   console.log(document.readyState),
-// );
+refs.gallery.addEventListener('click', isOpenLightboxHandle);
