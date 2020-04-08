@@ -23,12 +23,11 @@ function isertItemCard(item) {
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 
   if (markup) {
-    console.dir(refs.gallery);
-    const offsetHeightForm = refs.inputForm.offsetHeight;
     window.scrollBy({
-      top: document.documentElement.clientHeight - offsetHeightForm,
+      top: document.documentElement.clientHeight,
       behavior: 'smooth',
     });
+    refs.loadMoreBtn.classList.add('is-active');
   }
 }
 
@@ -41,11 +40,7 @@ function axiosArticles() {
         PNotify.info({
           text: 'No results were found for your request.',
         });
-        return;
       }
-      PNotify.success({
-        text: 'Your request completed successfully',
-      });
     })
     .catch((error) => {
       PNotify.error({
