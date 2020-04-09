@@ -12,6 +12,7 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   inputForm: document.querySelector('#search-form'),
   loadMoreBtn: document.querySelector('button[type="button"]'),
+  upwardBtn: document.querySelector('.button-upward'),
 };
 
 function clearList() {
@@ -86,3 +87,11 @@ refs.inputForm.addEventListener('submit', handleInput);
 refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle);
 
 refs.gallery.addEventListener('click', isOpenLightboxHandle);
+
+refs.upwardBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
+});
