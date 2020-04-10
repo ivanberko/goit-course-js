@@ -13,6 +13,7 @@ const refs = {
   inputForm: document.querySelector('#search-form'),
   loadMoreBtn: document.querySelector('button[type="button"]'),
   upwardBtn: document.querySelector('.button-upward'),
+  borderObser: document.querySelector('.border-observer'),
 };
 
 function clearList() {
@@ -23,13 +24,18 @@ function isertItemCard(item) {
   const markup = itemCadrTempl(item);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 
-  if (markup) {
+  // BUTTON LOAD MORE===================================================================
+  if (apiService.page > 2) {
+    const offsetHeightForm = refs.inputForm.offsetHeight;
     window.scrollBy({
-      top: document.documentElement.clientHeight,
+      top: document.documentElement.clientHeight - offsetHeightForm,
       behavior: 'smooth',
     });
-    refs.loadMoreBtn.classList.add('is-active');
   }
+
+  if (markup) {
+    refs.loadMoreBtn.classList.add('is-active');
+  } // BUTTON LOAD MORE===================================================================
 }
 
 function axiosArticles() {
@@ -72,6 +78,7 @@ const handleInput = (event) => {
   input.value = '';
 };
 
+// BUTTON LOAD MORE===================================================================
 function loadMoreButtonHandle() {
   if (!apiService.searchQuery) {
     PNotify.info({
@@ -81,10 +88,31 @@ function loadMoreButtonHandle() {
   }
   axiosArticles();
 }
+refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle); // BUTTON LOAD MORE===================================================================
+
+// INFINITY SCROLL====================================================================
+// function loadMoreScroll() {
+//   if (apiService.searchQuery) {
+//     axiosArticles();
+//   }
+// }
+
+// const infinScroll = (target) => {
+//   const options = {
+//     rootMargin: '0px 0px 100px 0px',
+//     threshold: 0.01,
+//   };
+//   const observer = new IntersectionObserver((entries) => {
+//     if (entries[0].isIntersecting) {
+//       loadMoreScroll();
+//     }
+//   }, options);
+//   observer.observe(target);
+// };
+
+// infinScroll(refs.borderObser); // INFINITY SCROLL===================================================================
 
 refs.inputForm.addEventListener('submit', handleInput);
-
-refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle);
 
 refs.gallery.addEventListener('click', isOpenLightboxHandle);
 
