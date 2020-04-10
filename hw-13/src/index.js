@@ -1,5 +1,6 @@
 import './style.css';
 import PNotify from 'pnotify/dist/es/PNotify';
+import PNotifyButtons from 'pnotify/dist/es/PNotifyButtons';
 import 'pnotify/dist/PNotifyBrightTheme.css';
 
 import itemCadrTempl from './templates/itemCard.hbs';
@@ -90,7 +91,7 @@ function loadMoreButtonHandle() {
 }
 refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle); // BUTTON LOAD MORE===================================================================
 
-// INFINITY SCROLL====================================================================
+// INFINITY SCROLL Observer====================================================================
 // function loadMoreScroll() {
 //   if (apiService.searchQuery) {
 //     axiosArticles();
@@ -110,7 +111,7 @@ refs.loadMoreBtn.addEventListener('click', loadMoreButtonHandle); // BUTTON LOAD
 //   observer.observe(target);
 // };
 
-// infinScroll(refs.borderObser); // INFINITY SCROLL===================================================================
+// infinScroll(refs.borderObser); // INFINITY SCROLL Observer===================================================================
 
 refs.inputForm.addEventListener('submit', handleInput);
 

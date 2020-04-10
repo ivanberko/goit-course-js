@@ -108,6 +108,7 @@ body {
 
 .stats-item {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -115,7 +116,7 @@ body {
 .stats-count {
   color: #371b55;
   font-weight: 700;
-  margin-left: 3px;
+  margin-top: 3px;
 }
 
 .material-icons.color-purple {
